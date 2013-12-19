@@ -1,0 +1,251 @@
+body{
+	font-size: 62.5%;
+	}
+.menubtn{
+	display: none;
+	}
+nav{
+    overflow:auto;
+    font-size:1.8em;
+    display: block;
+	}
+nav span{
+	display: none;
+	}
+
+/* all lists */
+nav ul, nav ul ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+	}
+nav ul a {
+	display: block;
+	text-decoration: none;
+	}
+/* all list items */
+nav ul li {
+	float: left;
+	width: 10em; /* width needed or else Opera goes nuts */
+	-webkit-transition: background-color 0.7s ease;
+    -moz-transition: background-color 0.7s ease;
+    -o-transition: background-color 0.7s ease;
+    -ms-transition: background-color 0.7s ease;
+    transition: background-color 0.7s ease;
+	}
+nav ul li:last-child{
+	border:none;
+	}
+/* second-level lists */
+nav ul li ul {
+	position: absolute;
+	width: 10em;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+	}
+nav ul ul li,
+nav ul ul ul li,
+nav ul ul ul ul li{
+	border-right:none;
+	}
+nav ul li a.sf-with-ul:after {
+	content: '\00BB';/*Right Double Arrows*/
+	position: relative;
+	float: right;
+	top: 0em;
+	}
+
+nav ul li a.sf-with-ul:only-child:after{
+	content: '';/* if only child, delete arrow */
+	 }
+nav ul li ul a{
+	padding:0.5em 1em;
+	margin-top:-1px; /*to offset bottom border*/
+	}
+nav ul li ul li:last-child a{
+	border-bottom:none;
+	}
+/* third-and-above-level lists */
+nav ul li ul ul { 
+	margin: -2em 0 0 10em;/* negative margin calculated by li padding plus line height*/
+	}
+nav ul li:hover ul ul, 
+nav ul li:hover ul ul ul, 
+nav ul li.sfhover ul ul, 
+nav ul li.sfhover ul ul ul {
+	left: -999em;
+	}
+
+nav ul li:hover ul, 
+nav ul li li:hover ul, 
+nav ul li li li:hover ul, 
+nav ul li.sfhover ul, 
+nav ul li li.sfhover ul, 
+nav ul li li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+	}
+/*UNIVERSAL PADDING*/
+nav ul a,
+nav ul li a,
+nav ul li ul a {
+	padding:0.5em 1em;
+	}
+/*----------------------------------
+	IE7
+-----------------------------------*/
+.ie7 nav ul li a.sf-with-ul{
+	 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NjUzQjYyMzVGOEMxMUUzOTFFRTg0NDFCMzIxQjA4QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NjUzQjYyNDVGOEMxMUUzOTFFRTg0NDFCMzIxQjA4QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY2NTNCNjIxNUY4QzExRTM5MUVFODQ0MUIzMjFCMDhCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY2NTNCNjIyNUY4QzExRTM5MUVFODQ0MUIzMjFCMDhCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+BDQ6YwAAAHdJREFUeNpiZBLWYCAGMEFpZiCuAGJOHHy4Qm8gbgfijVBJdD4DMyOXCIi+CcT/gTgZiI2BuAWI/yDxVzMiuRGk8wYQywGxPxDvRuYzISnaAhUshipC5m+CKbQHYicgrgHiPix8BmSrDYD4AlKIoPAZiQ1HgAADAOmdFtZlRP7CAAAAAElFTkSuQmCC);
+	 background-repeat: no-repeat;
+	 background-position:right center;
+     }
+/*----------------------------------
+	IE6
+-----------------------------------*/
+.ie6 nav ul li a.sf-with-ul{
+	 background-image: url('arrow.png');
+	 background-repeat: no-repeat;
+	 background-position:right center;
+	 }
+/*----------------------------------
+	COLORS
+-----------------------------------*/
+nav{
+    background:#e5e5e5;
+    }
+nav ul a {
+	color:#333;
+	}
+/*Top Nav borders*/
+nav ul li {
+	border-right:1px solid #ccc;
+	}
+
+nav ul li:hover{
+	color: #666;
+	background: #e5e5e5;
+	}
+nav ul li ul a{
+	border-bottom:1px solid #e5e5e5;
+	}
+nav ul li ul {
+	background: #ccc;
+	}
+	
+/*----------------------------------
+	MEDIA QUERY
+-----------------------------------*/
+@media screen and (max-width:800px){
+	.menubtn{
+		display: block;
+		padding:10px;
+		float:right;
+		}
+	.menubtn:hover{
+		cursor: pointer;
+		}
+	nav span{
+		display: block;
+		}
+	nav span{
+		position: relative;
+		float: right;
+		padding: 10px;
+		}
+	nav span:hover{
+		cursor: pointer;
+		}
+	nav ul,
+	nav ul > ul{
+		display: none;
+		float:none;
+		width:100%;
+		}
+	nav ul li {
+		border-right:none;
+		}
+	nav ul li a.sf-with-ul:after {
+		content:'';
+		}
+	nav ul li ul{
+		width: 100%;
+		}
+	nav ul li ul a{
+		border-bottom:none;
+		}
+	nav ul ul,
+	nav ul li{
+		width:100%;
+		}
+	nav ul li a{
+		padding:0.5em 1em;
+		float: left;
+		}
+	nav ul li ul a,
+	nav ul ul li ul a
+	nav ul ul ul li ul a{
+		padding: 0.5em 1em;
+		}
+	nav ul li ul,
+	nav ul li ul ul,
+	nav ul li:hover ul ul, 
+	nav ul li:hover ul ul ul, 
+	nav ul li.sfhover ul ul, 
+	nav ul li.sfhover ul ul ul,
+	nav ul li:hover ul, 
+	nav ul li li:hover ul, 
+	nav ul li li li:hover ul, 
+	nav ul li.sfhover ul, 
+	nav ul li li.sfhover ul, 
+	nav ul li li li.sfhover ul {
+		position: relative;
+		display: none;
+		margin: 0 0 0 0;
+		left: 0em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+		}
+	
+	/*----------------------------------
+		MOBILE COLORS
+	-----------------------------------*/
+	.menubtn{
+		background: #ccc;
+		}
+	.menubtn:hover{
+		background:#bedbe1;
+		}
+	/*Plus icon*/
+	nav span{
+		background: #099;
+		}
+	nav span:hover{
+		background: #bedbe1;
+		}
+	/*Top Nav background*/
+	nav ul ul,
+	nav ul li{
+		background: #e5e5e5;
+		}
+	/*Sub-Nav background*/
+	nav ul li ul li{
+		background: #ccc;
+		}
+	/*Sub-Nav borders*/
+	nav ul li ul li{
+		border-bottom:1px solid #e5e5e5;
+		}
+	/*sub, sub-Nav background*/
+	nav ul ul ul li{
+		background: #999;
+		}
+	/*First Nav Item when open*/
+	ul li.menuOpen{
+		background:#bedbe1;
+		}
+	/*Sub-Nav Item when open*/
+	ul ul li.menuOpen{
+		background:#f8e8c6;
+		}
+	/*Sub, Sub-Nav Item when open*/
+	ul ul ul li.menuOpen{
+		background:#6d9790;
+		}
+}
