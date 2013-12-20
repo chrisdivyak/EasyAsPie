@@ -108,7 +108,7 @@ nav ul li ul a {
 	IE6
 -----------------------------------*/
 .ie6 nav ul li a.sf-with-ul{
-	 background-image: url('arrow.png');
+	 background-image: url('../images/arrow.png');
 	 background-repeat: no-repeat;
 	 background-position:right center;
 	 }
@@ -228,7 +228,7 @@ nav ul li ul {
 		background: none;
 		}
 	.menubtn{
-		background: url('menuicon.jpg') no-repeat right top;
+		background: url('../images/menuicon.jpg') no-repeat right top;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
  		filter: alpha(opacity=60);
  		-khtml-opacity: 0.6;
