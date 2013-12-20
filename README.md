@@ -27,7 +27,7 @@ of the lack of nested responsive menus.
  - Data image fallback for lack of png support for IE7
  - Arrow image for IE6 menus
  
-<h4>License</h2>
+<h2>License</h2>
  The MIT License (MIT)
 
  Copyright (c) 2013 Chris Divyak
