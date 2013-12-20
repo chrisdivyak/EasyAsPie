@@ -4,6 +4,8 @@ Easy As Pie - Responsive Navigation
 An easy to use, CSS3/jQuery Responsive Navigation built on the Superfish menu and HTML5. This was developed in part because
 of the lack of nested responsive menus. 
 
+<a href="http://chrisdivyak.com/dev/easyaspie/" target="_blank">Working Demo</a>
+
 <h2>Features</h2>
 
 - Heavily Commented CSS for easy updates.
