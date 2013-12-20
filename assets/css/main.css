@@ -1,12 +1,14 @@
 body{
 	font-size: 62.5%;
+	font-family: arial, helvetica, sans-serif;
 	}
 .menubtn{
 	display: none;
 	}
 nav{
     overflow:auto;
-    font-size:1.8em;
+    font-size:1.6em;/*16px*/
+    line-height: 1.2;
     display: block;
 	}
 nav span{
@@ -27,7 +29,7 @@ nav ul a {
 /* all list items */
 nav ul li {
 	float: left;
-	width: 10em; /* width needed or else Opera goes nuts */
+
 	-webkit-transition: background-color 0.7s ease;
     -moz-transition: background-color 0.7s ease;
     -o-transition: background-color 0.7s ease;
@@ -40,9 +42,12 @@ nav ul li:last-child{
 /* second-level lists */
 nav ul li ul {
 	position: absolute;
-	width: 10em;
+	width: 12em;
 	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
 	}
+nav ul li ul li{
+	width: 12em;
+}
 nav ul ul li,
 nav ul ul ul li,
 nav ul ul ul ul li{
@@ -53,13 +58,14 @@ nav ul li a.sf-with-ul:after {
 	position: relative;
 	float: right;
 	top: 0em;
+	right: -0.5em;
 	}
 
 nav ul li a.sf-with-ul:only-child:after{
 	content: '';/* if only child, delete arrow */
 	 }
 nav ul li ul a{
-	padding:0.5em 1em;
+	padding:0.5em 1.5em;
 	margin-top:-1px; /*to offset bottom border*/
 	}
 nav ul li ul li:last-child a{
@@ -67,7 +73,7 @@ nav ul li ul li:last-child a{
 	}
 /* third-and-above-level lists */
 nav ul li ul ul { 
-	margin: -2em 0 0 10em;/* negative margin calculated by li padding plus line height*/
+	margin: -2em 0 0 12em;/* negative margin calculated by li padding plus line height*/
 	}
 nav ul li:hover ul ul, 
 nav ul li:hover ul ul ul, 
@@ -88,7 +94,7 @@ nav ul li li li.sfhover ul { /* lists nested under hovered list items */
 nav ul a,
 nav ul li a,
 nav ul li ul a {
-	padding:0.5em 1em;
+	padding:0.5em 1.5em;
 	}
 /*----------------------------------
 	IE7
@@ -102,7 +108,7 @@ nav ul li ul a {
 	IE6
 -----------------------------------*/
 .ie6 nav ul li a.sf-with-ul{
-	 background-image: url('arrow.png');
+	 background-image: url('../images/arrow.png');
 	 background-repeat: no-repeat;
 	 background-position:right center;
 	 }
@@ -137,8 +143,14 @@ nav ul li ul {
 @media screen and (max-width:800px){
 	.menubtn{
 		display: block;
-		padding:10px;
+		padding:10px 0 15px;
 		float:right;
+		text-indent:-9999px;
+		-webkit-transition: all 300ms ease-in-out;
+		-moz-transition: all 300ms ease-in-out;
+		-ms-transition: all 300ms ease-in-out;
+		-o-transition: all 300ms ease-in-out;
+		transition: all 300ms ease-in-out;
 		}
 	.menubtn:hover{
 		cursor: pointer;
@@ -166,7 +178,8 @@ nav ul li ul {
 	nav ul li a.sf-with-ul:after {
 		content:'';
 		}
-	nav ul li ul{
+	nav ul li ul,
+	nav ul li ul li{
 		width: 100%;
 		}
 	nav ul li ul a{
@@ -200,17 +213,28 @@ nav ul li ul {
 		position: relative;
 		display: none;
 		margin: 0 0 0 0;
-		left: 0em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+		left: 0em; /* using left instead of display because display: none isn't read by screen readers */
 		}
 	
 	/*----------------------------------
 		MOBILE COLORS
 	-----------------------------------*/
-	.menubtn{
-		background: #ccc;
+	nav{
+		background: none;
 		}
-	.menubtn:hover{
-		background:#bedbe1;
+	.menubtn{
+		background: url('../images/menuicon.jpg') no-repeat right top;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+ 		filter: alpha(opacity=60);
+ 		-khtml-opacity: 0.6;
+ 		opacity: 0.6;
+		}
+	.menubtn:hover,
+	.menuOpen{
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+ 		filter: alpha(opacity=100);
+ 		-khtml-opacity: 1;
+ 		opacity: 1;
 		}
 	/*Plus icon*/
 	nav span{
