@@ -33,8 +33,8 @@
 			//Set the default values, use comma to separate the settings, example:
 			var defaults = {
 				icon: "+",
-				navClass: "nav",
-				collapseClass: "ul-collapse"
+				navClass: "applePie",
+				collapseClass: "pieCollapse"
 			}
 			
 				
@@ -45,7 +45,7 @@
 				
 				if ($(window).width() > 800) {
 					//Call Superfish menu for nice drop-downs
-					$(o.navClass).superfish();
+					$("."+o.navClass).superfish({delay:0,speed:'fast',});
 					}
 				//IF WINDOW SIZE kindle
 				if ($(window).width() < 800) {
@@ -59,36 +59,37 @@
 				$(window).on('resize', function(){
 			      
 			      	if ($(window).width() < 800) {
+			      	
+			      	
 					    //Check if span exists within li, if not, add 
-					    if($(o.navClass+" li span").length < 1){	
-					  	   $(o.navClass+" li").append("<span>"+o.icon+"</span>");	
+					    if($("."+o.navClass+" li span").length < 1){	
+					  	   $("."+o.navClass+" li").append("<span>"+o.icon+"</span>");	
 					  	}
 					  	
 					  	//If slideToggle was open, close
-						if ($(o.navClass+" ul").is(":visible")){
-							$(o.navClass+" ul:first").hide();
+						if ($("."+o.navClass+" ul").is(":visible")){
+							$("."+o.navClass+" ul:first").hide();
 							}
 						//FIX menu hide issue when nav gets to bottom of device
-					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-						$(o.navClass+" ul:first").show();
-						}
+						if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+							$("."+o.navClass+" ul:first").show();
+							}
 					 }
 					 if ($(window).width() > 800) {
 					 	//Show nav even if slideToggle collapsed
-						$(o.navClass+" ul:first").show();
+						$("."+o.navClass+" ul:first").show();
 						
 						//CALL SUPERFISH ON RESIZE
-						$(o.navClass).superfish();
-						
+						$("."+o.navClass).superfish({delay:0,speed:'fast',});
 						}
-					
-			
 				}); 
 					
 				//ON CLICK SLIDETOGGLE
-				 $(o.navClass+" li span, .menubtn").click(function(e){
+				 $("."+o.navClass+" li span, .menubtn").click(function(e){
 				     e.preventDefault();	
-				     $(this).next("ul").slideToggle();
+				     $(this).next("ul").slideToggle(function(){
+					     $(this).parent().toggleClass("menuOpen");
+						 });
 				     
 				     if($("ul#nav").is(":visible")){
 					     $(".menubtn").addClass("menuOpen");
@@ -97,10 +98,7 @@
 					     $(".menubtn").removeClass("menuOpen");
 				     }
 			
-					//ADD CLASS TO LI IS SLIDETOGGLE OPEN
-					if ($("ul."+o.collapseClass).is(":visible")){
-						$(this).parent().addClass("menuOpen");
-						}
+					
 				 });  
 
 						

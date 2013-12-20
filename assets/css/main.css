@@ -108,7 +108,7 @@ nav ul li ul a {
 	IE6
 -----------------------------------*/
 .ie6 nav ul li a.sf-with-ul{
-	 background-image: url('../images/arrow.png');
+	 background-image: url('arrow.png');
 	 background-repeat: no-repeat;
 	 background-position:right center;
 	 }
@@ -151,6 +151,7 @@ nav ul li ul {
 		-ms-transition: all 300ms ease-in-out;
 		-o-transition: all 300ms ease-in-out;
 		transition: all 300ms ease-in-out;
+		width:40px;
 		}
 	.menubtn:hover{
 		cursor: pointer;
@@ -190,13 +191,17 @@ nav ul li ul {
 		width:100%;
 		}
 	nav ul li a{
-		padding:0.5em 1em;
+		padding:0.5em 1em 0.5em 1em;
 		float: left;
 		}
-	nav ul li ul a,
-	nav ul ul li ul a
+	nav ul li ul a{
+		padding: 0.5em 1em 0.5em 2em;
+		}
+	nav ul ul li ul a{
+		padding: 0.5em 1em 0.5em 3em;
+		}
 	nav ul ul ul li ul a{
-		padding: 0.5em 1em;
+		padding: 0.5em 1em 0.5em 4em;
 		}
 	nav ul li ul,
 	nav ul li ul ul,
@@ -223,7 +228,7 @@ nav ul li ul {
 		background: none;
 		}
 	.menubtn{
-		background: url('../images/menuicon.jpg') no-repeat right top;
+		background: url('menuicon.jpg') no-repeat right top;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
  		filter: alpha(opacity=60);
  		-khtml-opacity: 0.6;
@@ -238,15 +243,16 @@ nav ul li ul {
 		}
 	/*Plus icon*/
 	nav span{
-		background: #099;
+		background: #00b4ff;
+		color:#fff;
 		}
 	nav span:hover{
-		background: #bedbe1;
+		background: #049ad6;
 		}
 	/*Top Nav background*/
 	nav ul ul,
 	nav ul li{
-		background: #e5e5e5;
+		background: #eeeeee;
 		}
 	/*Sub-Nav background*/
 	nav ul li ul li{
@@ -258,18 +264,24 @@ nav ul li ul {
 		}
 	/*sub, sub-Nav background*/
 	nav ul ul ul li{
-		background: #999;
+		background: #ccc;
 		}
 	/*First Nav Item when open*/
-	ul li.menuOpen{
-		background:#bedbe1;
+	ul li.menuOpen,
+	ul li.menuOpen:hover{
+		background:#47a3da;
 		}
+	ul li.menuOpen >span{
+		background: #049ad6;
+	}
 	/*Sub-Nav Item when open*/
-	ul ul li.menuOpen{
-		background:#f8e8c6;
+	ul ul li.menuOpen,
+	ul ul li.menuOpen:hover{
+		background:#a9e4fc;
 		}
 	/*Sub, Sub-Nav Item when open*/
-	ul ul ul li.menuOpen{
-		background:#6d9790;
+	ul ul ul li.menuOpen,
+	ul ul ul li.menuOpen:hover{
+		background:#cdebf7;
 		}
 }
