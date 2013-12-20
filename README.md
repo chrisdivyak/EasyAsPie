@@ -26,6 +26,19 @@ of the lack of nested responsive menus.
  - HoverIntent plugin
  - Data image fallback for lack of png support for IE7
  - Arrow image for IE6 menus
+ - 
+<h2>Options</h2>
+
+```html
+<h2>Example of code</h2>
+
+<pre>
+  icon: "+" //icon for mobile push menu
+	navClass: "applePie"//Navigation class
+  collapseClass: "pieCollapse" //class for collapsing menu on mobile
+
+</pre>
+```
  
 <h2>License</h2>
  The MIT License (MIT)
