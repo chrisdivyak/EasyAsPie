@@ -59,8 +59,7 @@
 				$(window).on('resize', function(){
 			      
 			      	if ($(window).width() < 800) {
-			      	
-			      	
+			   
 					    //Check if span exists within li, if not, add 
 					    if($("."+o.navClass+" li span").length < 1){	
 					  	   $("."+o.navClass+" li").append("<span>"+o.icon+"</span>");	
