@@ -32,11 +32,10 @@
 
 			//Set the default values, use comma to separate the settings, example:
 			var defaults = {
-
-				icon: "+",
-				navClass: "applePie",
-				collapseClass: "pieCollapse",
-				slideTop: true
+				  icon: "+", //icon for mobile push menu
+				  navClass: "applePie",//Navigation class
+				  collapseClass: "pieCollapse", //class for collapsing menu on mobile
+				  slideTop: true //change to false if you wish to not have a scrollTo function on your menu
 			}
 
 			var options =  $.extend(defaults, options);
@@ -89,7 +88,7 @@
 
 					  	//If slideToggle was open, close
 						if ($("."+o.navClass+" ul").is(":visible")){
-							//$("."+o.navClass+" ul:first").hide();
+							$("."+o.navClass+" ul:first").hide();
 							}
 						//FIX menu hide issue when nav gets to bottom of device
 						if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
