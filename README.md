@@ -1,5 +1,6 @@
-Easy As Pie - Responsive Navigation
+<img src="http://code-baker.com/assets/images/easyaspieblack-logo.jpg" alt="Easy as pie responsive navigation"/>
 ===================================
+Easy As Pie - Responsive Navigation
 
 An easy to use, CSS3/jQuery Responsive Navigation built on the Superfish menu and HTML5. This was developed in part because
 of the lack of nested responsive menus. 
