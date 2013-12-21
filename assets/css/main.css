@@ -72,21 +72,21 @@ nav ul li ul li:last-child a{
 	border-bottom:none;
 	}
 /* third-and-above-level lists */
-nav ul li ul ul { 
+nav ul li ul ul {
 	margin: -2em 0 0 12em;/* negative margin calculated by li padding plus line height*/
 	}
-nav ul li:hover ul ul, 
-nav ul li:hover ul ul ul, 
-nav ul li.sfhover ul ul, 
+nav ul li:hover ul ul,
+nav ul li:hover ul ul ul,
+nav ul li.sfhover ul ul,
 nav ul li.sfhover ul ul ul {
 	left: -999em;
 	}
 
-nav ul li:hover ul, 
-nav ul li li:hover ul, 
-nav ul li li li:hover ul, 
-nav ul li.sfhover ul, 
-nav ul li li.sfhover ul, 
+nav ul li:hover ul,
+nav ul li li:hover ul,
+nav ul li li li:hover ul,
+nav ul li.sfhover ul,
+nav ul li li.sfhover ul,
 nav ul li li li.sfhover ul { /* lists nested under hovered list items */
 	left: auto;
 	}
@@ -136,7 +136,7 @@ nav ul li ul a{
 nav ul li ul {
 	background: #ccc;
 	}
-	
+
 /*----------------------------------
 	MEDIA QUERY
 -----------------------------------*/
@@ -205,22 +205,22 @@ nav ul li ul {
 		}
 	nav ul li ul,
 	nav ul li ul ul,
-	nav ul li:hover ul ul, 
-	nav ul li:hover ul ul ul, 
-	nav ul li.sfhover ul ul, 
+	nav ul li:hover ul ul,
+	nav ul li:hover ul ul ul,
+	nav ul li.sfhover ul ul,
 	nav ul li.sfhover ul ul ul,
-	nav ul li:hover ul, 
-	nav ul li li:hover ul, 
-	nav ul li li li:hover ul, 
-	nav ul li.sfhover ul, 
-	nav ul li li.sfhover ul, 
+	nav ul li:hover ul,
+	nav ul li li:hover ul,
+	nav ul li li li:hover ul,
+	nav ul li.sfhover ul,
+	nav ul li li.sfhover ul,
 	nav ul li li li.sfhover ul {
 		position: relative;
 		display: none;
 		margin: 0 0 0 0;
 		left: 0em; /* using left instead of display because display: none isn't read by screen readers */
 		}
-	
+
 	/*----------------------------------
 		MOBILE COLORS
 	-----------------------------------*/

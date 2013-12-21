@@ -24,8 +24,8 @@
 */
 (function($){
 
- 	$.fn.extend({ 
- 		
+ 	$.fn.extend({
+
 		//pass the options variable to the function
  		easyPie: function(options) {
 
@@ -36,13 +36,13 @@
 				navClass: "applePie",
 				collapseClass: "pieCollapse"
 			}
-			
-				
+
+
 			var options =  $.extend(defaults, options);
 
     		return this.each(function() {
 				var o = options;
-				
+
 				if ($(window).width() > 800) {
 					//Call Superfish menu for nice drop-downs
 					$("."+o.navClass).superfish({delay:0,speed:'fast',});
@@ -52,19 +52,38 @@
 					//IF NAV LI CONTAINS DROPDOWN, ADD PLUS SIGN
 					$("li").find('ul').addClass(o.collapseClass);
 					$("span").remove();
-					$("ul."+o.collapseClass).before('<span>'+o.icon+'</span>');  
+					$("ul."+o.collapseClass).before('<span>'+o.icon+'</span>');
 				}
-				
+
 				//ON WINDOW RESIZE
 				$(window).on('resize', function(){
-			      
+
 			      	if ($(window).width() < 800) {
-			   
-					    //Check if span exists within li, if not, add 
-					    if($("."+o.navClass+" li span").length < 1){	
-					  	   $("."+o.navClass+" li").append("<span>"+o.icon+"</span>");	
+
+			      		 //ON CLICK SLIDETOGGLE
+						 $("."+o.navClass+" li span").unbind('click').click(function(e){
+						 	 e.preventDefault();
+							     $(this).next().slideToggle(function(e){
+								     $(this).parent().toggleClass("menuOpen");
+
+									 });
+
+
+
+
+							});
+
+
+					  	//Destroy Superfish
+					  	$("."+o.navClass).superfish('destroy');
+
+
+
+					    //Check if span exists within li, if not, add
+					    if($("."+o.navClass+" li span").length < 1){
+					  	   $("."+o.navClass+" li > ul").before("<span>"+o.icon+"</span>");
 					  	}
-					  	
+
 					  	//If slideToggle was open, close
 						if ($("."+o.navClass+" ul").is(":visible")){
 							$("."+o.navClass+" ul:first").hide();
@@ -77,32 +96,34 @@
 					 if ($(window).width() > 800) {
 					 	//Show nav even if slideToggle collapsed
 						$("."+o.navClass+" ul:first").show();
-						
+
 						//CALL SUPERFISH ON RESIZE
 						$("."+o.navClass).superfish({delay:0,speed:'fast',});
 						}
-				}); 
-					
+				});
+
 				//ON CLICK SLIDETOGGLE
 				 $("."+o.navClass+" li span, .menubtn").click(function(e){
-				     e.preventDefault();	
+				     e.preventDefault();
+
 				     $(this).next("ul").slideToggle(function(){
 					     $(this).parent().toggleClass("menuOpen");
 						 });
-				     
+
 				     if($("ul#nav").is(":visible")){
 					     $(".menubtn").addClass("menuOpen");
 				     }
 				    if($("ul#nav").is(":hidden")){
 					     $(".menubtn").removeClass("menuOpen");
 				     }
-			
-					
-				 });  
+				 });
 
-						
+
+
     		});
     	}
 	});
-	
+
+
+
 })(jQuery);
