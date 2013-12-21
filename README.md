@@ -34,6 +34,7 @@ of the lack of nested responsive menus.
   icon: "+" //icon for mobile push menu
   navClass: "applePie"//Navigation class
   collapseClass: "pieCollapse" //class for collapsing menu on mobile
+  slideTop: true //change to false if you wish to not have a scrollTo function on your menu
 
 ```
  
