@@ -32,11 +32,12 @@
 
 			//Set the default values, use comma to separate the settings, example:
 			var defaults = {
+
 				icon: "+",
 				navClass: "applePie",
-				collapseClass: "pieCollapse"
+				collapseClass: "pieCollapse",
+				slideTop: true
 			}
-
 
 			var options =  $.extend(defaults, options);
 
@@ -60,24 +61,26 @@
 
 			      	if ($(window).width() < 800) {
 
-			      		 //ON CLICK SLIDETOGGLE
+			      		 //ON CLICK SLIDETOGGLE vertical menu
 						 $("."+o.navClass+" li span").unbind('click').click(function(e){
 						 	 e.preventDefault();
-							     $(this).next().slideToggle(function(e){
+							     $(this).next().slideToggle(function(){
 								     $(this).parent().toggleClass("menuOpen");
 
-									 });
-
-
-
-
+								  });
+							 //If slideTop equals true then slide
+						     if(o.slideTop == true){
+							       navigateTo($(this));
+								   return false;
+							   }
+							 //else, return false
+							 else{
+								   return false;
+							   }
 							});
 
-
-					  	//Destroy Superfish
+					  	//Destroy Superfish to prevent hovering on resize
 					  	$("."+o.navClass).superfish('destroy');
-
-
 
 					    //Check if span exists within li, if not, add
 					    if($("."+o.navClass+" li span").length < 1){
@@ -86,7 +89,7 @@
 
 					  	//If slideToggle was open, close
 						if ($("."+o.navClass+" ul").is(":visible")){
-							$("."+o.navClass+" ul:first").hide();
+							//$("."+o.navClass+" ul:first").hide();
 							}
 						//FIX menu hide issue when nav gets to bottom of device
 						if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -104,26 +107,40 @@
 
 				//ON CLICK SLIDETOGGLE
 				 $("."+o.navClass+" li span, .menubtn").click(function(e){
-				     e.preventDefault();
+					  e.preventDefault();
 
-				     $(this).next("ul").slideToggle(function(){
+					  //remove all classes and slidetoggle
+
+
+					 //Add class to open slidetoggle menu
+				     $(this).next("ul").slideToggle(function(e){
 					     $(this).parent().toggleClass("menuOpen");
 						 });
 
-				     if($("ul#nav").is(":visible")){
+				     if($("."+o.navClass+"ul:first").is(":visible")){
 					     $(".menubtn").addClass("menuOpen");
 				     }
-				    if($("ul#nav").is(":hidden")){
+				     //If slideToggle is close, remove class
+				    if($("."+o.navClass+"ul:first").is(":hidden")){
 					     $(".menubtn").removeClass("menuOpen");
 				     }
+				     //If slideTop equals true then slide
+				     if(o.slideTop == true){
+					       navigateTo($(this));
+						   return false;
+					   }
+					 //else, return false
+					 else{
+						   return false;
+					   }
+
 				 });
 
-
-
+				 //Slide to li on click
+				 function navigateTo(destination) {
+					 $('html,body').delay(500).animate({scrollTop: $(destination).offset().top - 48},'fast');
+					 }
     		});
     	}
 	});
-
-
-
 })(jQuery);
