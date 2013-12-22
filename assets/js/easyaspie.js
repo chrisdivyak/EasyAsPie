@@ -105,7 +105,7 @@
 				});
 
 				//ON CLICK SLIDETOGGLE
-				 $("."+o.navClass+" li span, .menubtn").click(function(e){
+				 $("."+o.navClass+" li span, .menubtn").unbind("click").click(function(e){
 					  e.preventDefault();
 
 					  //remove all classes and slidetoggle
