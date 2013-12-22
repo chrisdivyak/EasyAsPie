@@ -1,4 +1,4 @@
-/** Easy As Pie Responsive Navigation Plugin
+/** Easy As Pie Responsive Navigation Plugin - Version 1.1
 
  The MIT License (MIT)
 
