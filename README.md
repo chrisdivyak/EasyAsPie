@@ -1,24 +1,23 @@
-<img src="http://code-baker.com/assets/images/easyaspieblack-logo.jpg" alt="Easy as pie responsive navigation"/>
-===================================
 Easy As Pie - Responsive Navigation
+===================================
 
 An easy to use, CSS3/jQuery Responsive Navigation built on the Superfish menu and HTML5. This was developed in part because
 of the lack of nested responsive menus. 
 
-<a href="http://code-baker.com/demo/easyaspie/" target="_blank">Working Demo</a>
+<a href="http://chrisdivyak.com/dev/easyaspie/" target="_blank">Working Demo</a>
 
 <h2>Features</h2>
 
 - Heavily Commented CSS for easy updates.
 - Works in the following Browsers
-  - IE7+
+  - IE6+
   - Firefox 3.6+
   - Safari 4+
   - Chrome
   - Opera
   - iPad 2+
   - iPhone 3+
-  - Android 4+
+  - Android
   
 <h2>What's Included</h2>
 
@@ -35,7 +34,6 @@ of the lack of nested responsive menus.
   icon: "+" //icon for mobile push menu
   navClass: "applePie"//Navigation class
   collapseClass: "pieCollapse" //class for collapsing menu on mobile
-  slideTop: true //change to false if you wish to not have a scrollTo function on your menu
 
 ```
  
