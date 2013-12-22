@@ -11,14 +11,14 @@ of the lack of nested responsive menus.
 
 - Heavily Commented CSS for easy updates.
 - Works in the following Browsers
-  - IE6+
+  - IE7+
   - Firefox 3.6+
   - Safari 4+
   - Chrome
   - Opera
   - iPad 2+
   - iPhone 3+
-  - Android
+  - Android 4+
   
 <h2>What's Included</h2>
 
