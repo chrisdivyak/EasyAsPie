@@ -143,7 +143,7 @@ nav ul li ul {
 @media screen and (max-width:800px){
 	.menubtn{
 		display: block;
-		padding:10px 0 15px;
+		margin: 5px 0 10px;
 		float:right;
 		text-indent:-9999px;
 		-webkit-transition: all 300ms ease-in-out;
@@ -152,6 +152,7 @@ nav ul li ul {
 		-o-transition: all 300ms ease-in-out;
 		transition: all 300ms ease-in-out;
 		width:40px;
+		height:40px;
 		}
 	.menubtn:hover{
 		cursor: pointer;
@@ -228,7 +229,7 @@ nav ul li ul {
 		background: none;
 		}
 	.menubtn{
-		background: url('../images/menuicon.jpg') no-repeat right top;
+		background: #333 url('../images/menuicon.png')  no-repeat right top;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
  		filter: alpha(opacity=60);
  		-khtml-opacity: 0.6;
