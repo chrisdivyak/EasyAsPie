@@ -6,12 +6,12 @@ body{
 	display: none;
 	}
 nav{
-    overflow:auto;
     font-size:1.6em;/*16px*/
     line-height: 1.2;
     display: block;
     position: relative;
-    z-index: 9999;
+    z-index:9999;
+    min-height: 32px;
 	}
 nav span{
 	display: none;
@@ -31,7 +31,7 @@ nav ul a {
 	}
 /* all list items */
 nav ul li {
-	display: inline-block;
+	float:left;
 	-webkit-transition: background-color 0.7s ease;
     -moz-transition: background-color 0.7s ease;
     -o-transition: background-color 0.7s ease;
@@ -49,7 +49,7 @@ nav ul li ul {
 	}
 nav ul li ul li{
 	width: 12em;
-}
+	}
 nav ul ul li,
 nav ul ul ul li,
 nav ul ul ul ul li{
