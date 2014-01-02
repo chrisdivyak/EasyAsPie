@@ -10,6 +10,8 @@ nav{
     font-size:1.6em;/*16px*/
     line-height: 1.2;
     display: block;
+    position: relative;
+    z-index: 9999;
 	}
 nav span{
 	display: none;
@@ -21,6 +23,7 @@ nav ul, nav ul ul {
 	margin: 0;
 	list-style: none;
 	line-height: 1;
+	position: relative;
 	}
 nav ul a {
 	display: block;
@@ -28,8 +31,7 @@ nav ul a {
 	}
 /* all list items */
 nav ul li {
-	float: left;
-
+	display: inline-block;
 	-webkit-transition: background-color 0.7s ease;
     -moz-transition: background-color 0.7s ease;
     -o-transition: background-color 0.7s ease;
