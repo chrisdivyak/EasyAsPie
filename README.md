@@ -29,14 +29,13 @@ of the lack of nested responsive menus.
  
 <h2>Options</h2>
 
-```html
-
-  icon: "+" //icon for mobile push menu
-  navClass: "applePie"//Navigation class
-  collapseClass: "pieCollapse" //class for collapsing menu on mobile
-
+```js
+$("nav").easyPie({
+  'icon': "+" //icon for mobile push menu
+  'navClass': "applePie"//Navigation class
+  'collapseClass': "pieCollapse" //class for collapsing menu on mobile 	  
+});
 ```
- 
 <h2>License</h2>
  The MIT License (MIT)
 
