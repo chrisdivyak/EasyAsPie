@@ -69,6 +69,13 @@ nav ul li.sfHover a.sf-with-ul:after{
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 	}
+nav ul li.sfHover li a.sf-with-ul:after{
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+	}
 nav ul li a.sf-with-ul:only-child:after{
 	content: '';/* if only child, delete arrow */
 	 }
