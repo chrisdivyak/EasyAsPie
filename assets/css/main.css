@@ -62,7 +62,13 @@ nav ul li a.sf-with-ul:after {
 	top: 0em;
 	right: -0.5em;
 	}
-
+nav ul li.sfHover a.sf-with-ul:after{
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	}
 nav ul li a.sf-with-ul:only-child:after{
 	content: '';/* if only child, delete arrow */
 	 }
