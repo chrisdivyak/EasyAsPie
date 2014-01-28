@@ -92,7 +92,7 @@
 							}
 						//FIX menu hide issue when nav gets to bottom of device
 						if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-							$("."+o.navClass+" ul:first").show();
+							$("."+o.navClass+" ul ul:first").show();
 							}
 					 }
 					 if ($(window).width() > 800) {
