@@ -48,7 +48,7 @@
 					$("."+o.navClass).superfish({delay:0,speed:'fast',});
 					}
 				//IF WINDOW SIZE kindle
-				if ($(window).width() < 800 || $(window).width() == 800){
+				if ($(window).width() <= 800) {
 					//IF NAV LI CONTAINS DROPDOWN, ADD PLUS SIGN
 					$("li").find('ul').addClass(o.collapseClass);
 					$("span").remove();
@@ -58,8 +58,7 @@
 				//ON WINDOW RESIZE
 				$(window).on('resize', function(){
 
-			      	if ($(window).width() < 800 || $(window).width() == 800){
-
+			      	if ($(window).width() <= 800) {
 			      		 //ON CLICK SLIDETOGGLE vertical menu
 						 $("."+o.navClass+" li span").unbind('click').click(function(e){
 						 	 e.preventDefault();
@@ -87,11 +86,12 @@
 					  	}
 
 					  	//If slideToggle was open, close
-						if ($("."+o.navClass+" ul").is(":visible")){
-							$("."+o.navClass+" ul:first").hide();
-							}
+						//if ($("."+o.navClass+" ul").is(":visible")){
+							//$("."+o.navClass+" ul:first").hide();
+							//}
 						//FIX menu hide issue when nav gets to bottom of device
 						if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+					
 							$("."+o.navClass+" ul ul:first").show();
 							}
 					 }
