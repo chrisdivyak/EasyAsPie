@@ -51,7 +51,7 @@
 				if ($(window).width() <= 800) {
 					//IF NAV LI CONTAINS DROPDOWN, ADD PLUS SIGN
 					$("li").find('ul').addClass(o.collapseClass);
-					$("span").remove();
+					$("."+o.navClass+ "span").remove();
 					$("ul."+o.collapseClass).before('<span>'+o.icon+'</span>');
 				}
 
