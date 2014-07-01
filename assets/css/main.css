@@ -57,10 +57,11 @@ nav ul ul ul ul li{
 	}
 nav ul li a.sf-with-ul:after {
 	content: '\00BB';/*Right Double Arrows*/
-	position: relative;
-	float: right;
+	display: inline-block;
+	*float:right;/*IE7 Fix*/
+	position:relative;
 	top: 0em;
-	right: -0.5em;
+	right: -0.3em;
 	}
 nav ul li.sfHover a.sf-with-ul:after{
 	-moz-transform: rotate(90deg);
