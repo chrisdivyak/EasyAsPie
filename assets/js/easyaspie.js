@@ -143,3 +143,11 @@
     	}
 	});
 })(jQuery);
+//If the menu has a hash tag in href, slidetoggle menu
+$(window).on("hashchange", function () {
+
+        if ($(window).width() <= 800) {
+            $("#nav").slideToggle();
+            }
+
+});
