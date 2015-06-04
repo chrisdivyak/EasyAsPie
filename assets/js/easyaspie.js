@@ -33,6 +33,7 @@
 			//Set the default values, use comma to separate the settings, example:
 			var defaults = {
 				  icon: "+", //icon for mobile push menu
+				  navID: "nav", // nav id for ul
 				  navClass: "applePie",//Navigation class
 				  collapseClass: "pieCollapse", //class for collapsing menu on mobile
 				  slideTop: true //change to false if you wish to not have a scrollTo function on your menu
@@ -59,6 +60,8 @@
 				$(window).on('resize', function(){
 
 			      	if ($(window).width() <= 800) {
+			      		//on resize make sure hidden nav even if wasn't hidden first time
+				     	$("#"+o.navID).css("display","none");
 			      		 //ON CLICK SLIDETOGGLE vertical menu
 						 $("."+o.navClass+" li span").unbind('click').click(function(e){
 						 	 e.preventDefault();
