@@ -94,7 +94,7 @@
 							//}
 						//FIX menu hide issue when nav gets to bottom of device
 						if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-					
+
 							$("."+o.navClass+" ul ul:first").show();
 							}
 					 }
@@ -113,7 +113,10 @@
 
 					  //remove all classes and slidetoggle
 
-
+					  $('li').each(function(){
+						$(this).removeClass('menuOpen');
+						$('.pieCollapse').css('display', 'none');
+					})
 					 //Add class to open slidetoggle menu
 				     $(this).next("ul").slideToggle(function(e){
 					     $(this).parent().toggleClass("menuOpen");
