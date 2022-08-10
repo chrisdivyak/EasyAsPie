@@ -1,6 +1,6 @@
 Easy As Pie - Responsive Navigation
 ===================================
-***** I am no longer supporting further development of this plugin. Use at your own risk. *******
+### This code is Deprecated: I am no longer supporting further development of this plugin. Use at your own risk. 
 
 n easy to use, CSS3/jQuery Responsive Navigation built on the Superfish menu and HTML5. This was developed in part because
 of the lack of nested responsive menus. 
